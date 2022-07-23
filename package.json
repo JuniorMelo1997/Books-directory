@@ -1,0 +1,31 @@
+{
+  "name": "books-directory",
+  "version": "1.0.0",
+  "description": "My first app made all by myself using Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuniorMelo1997/Books-directory.git"
+  },
+  "keywords": [],
+  "author": "Genival de Melo Junior",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuniorMelo1997/Books-directory/issues"
+  },
+  "homepage": "https://github.com/JuniorMelo1997/Books-directory#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.6",
+    "@types/sequelize": "^4.28.14",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "sequelize": "^6.21.3"
+  }
+}
