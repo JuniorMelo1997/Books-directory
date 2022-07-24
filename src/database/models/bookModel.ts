@@ -12,6 +12,9 @@ const bookModel = db.define("Book", {
         allowNull: false
     },
     author:{
+        type: DataTypes.STRING
+    },
+    description:{
         type: DataTypes.STRING,
         allowNull: false
     },

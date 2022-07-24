@@ -5,6 +5,7 @@ const routes = express.Router();
 
 const bookController = new BookController;
 
-routes.post("/addbook", bookController.create)
+routes.post("/addbook", bookController.create);
+routes.get("/books", bookController.getAll);
 
 export {routes};
