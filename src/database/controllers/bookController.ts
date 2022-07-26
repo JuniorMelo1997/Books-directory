@@ -14,8 +14,16 @@ export class BookController{
         return res.status(422).json({message: "The book already exists in the database"});
     }
 
-    async getOne(){
+    async getOne(req: Request, res: Response){
+        const id = req.headers.id
 
+        const book = await bookModel.findOne({where: {id: id}});
+
+        if(!book){
+            return res.status(404).json({message: "book not found"});
+        }
+
+        return res.status(200).json(book);
     }
 
     async getAll(req: Request, res: Response){

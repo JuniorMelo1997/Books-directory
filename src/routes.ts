@@ -7,5 +7,6 @@ const bookController = new BookController;
 
 routes.post("/addbook", bookController.create);
 routes.get("/books", bookController.getAll);
+routes.get("/book/", bookController.getOne);
 
 export {routes};
