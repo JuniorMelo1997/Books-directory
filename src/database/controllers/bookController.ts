@@ -46,11 +46,21 @@ export class BookController{
         }
 
         await bookModel.update({name, author, description, year},{where: {id: id}});
-        return res.status(204).json(book);
+        return res.status(204).json();
 
     }
 
-    async destroy(){
+    async destroy(req: Request, res: Response){
+        const id = req.headers.id;
+        
+        const book = await bookModel.findOne({where: {id: id}});
 
+        if(!book){
+            return res.status(404).json({message: "no book found"});
+        }
+
+        await bookModel.destroy({where: {id: id}});
+
+        return res.status(200).json({message: "deleted successfully"});
     }
 }
