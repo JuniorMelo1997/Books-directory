@@ -35,7 +35,18 @@ export class BookController{
         return res.status(200).json(books);
     }
 
-    async update(){
+    async update(req: Request, res: Response){
+        const {name, author, description, year} = req.body;
+        const id = req.headers.id;
+
+        const book = await bookModel.findOne({where: {id: id}});
+
+        if(!book){
+            return res.status(404).json({message: "no book found"});
+        }
+
+        await bookModel.update({name, author, description, year},{where: {id: id}});
+        return res.status(204).json(book);
 
     }
 
